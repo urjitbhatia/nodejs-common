@@ -193,7 +193,7 @@ export class Service {
     reqOpts: DecorateRequestOptions | StreamRequestOptions,
     callback?: BodyResponseCallback
   ): void | r.Request {
-    reqOpts = extend(true, {}, reqOpts, {timeout: this.timeout});
+    reqOpts = extend(true, {timeout: this.timeout}, reqOpts);
     const isAbsoluteUrl = reqOpts.uri.indexOf('http') === 0;
     const uriComponents = [this.baseUrl];
 
